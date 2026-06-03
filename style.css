@@ -135,7 +135,6 @@ input[type="radio"]:checked + label{
     position: absolute;
     width: 526px;
     height: 320px;
-
     font-family: 'Silkscreen';
     font-style: normal;
     font-weight: 400;
