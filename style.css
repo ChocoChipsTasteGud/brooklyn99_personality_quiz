@@ -1,5 +1,4 @@
 .start-button{
-    /* START */
 
 position: absolute;
 width: 302px;
@@ -51,5 +50,97 @@ input[type="radio"]{
 }
 
 label{
+    position: relative;
+    font-family: 'Silkscreen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 82px;
+    text-align: left;
+
+    color:#FFFFFF;
+    background-color: #000000;
     
+    cursor: pointer;
+    gap: 40px;
+    border: 8px solid #FFFFFF;
+    padding: 60px 190px;
+    border-radius: 40px;
+    align-items: center;
+}
+
+label:before{
+    content:"";
+    height: 55px;
+    width: 55px;
+    border: 5 px solid #ffffff;
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked + label:before{
+    height: 30px;
+    width: 30px;
+    border: 25px solid #ffffff;
+    background-color: #000000;
+}
+
+input[type="radio"]:checked + label{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.next{
+    position: absolute;
+    width: 237px;
+    height: 70px;
+
+    font-family: 'Silkscreen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 55px;
+    line-height: 82px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.character{
+    position: absolute;
+    width: 483px;
+    height: 179px;
+
+    font-family: 'Silkscreen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 82px;
+    text-align: right;
+    color: #000000;
+}
+
+.announcement{
+    position: absolute;
+    width: 555px;
+    height: 142px;
+
+    font-family: 'Silkscreen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 82px;
+    text-align: left;
+    color: #000000;
+}
+
+.description{
+    position: absolute;
+    width: 526px;
+    height: 320px;
+
+    font-family: 'Silkscreen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 82px;
+    text-align: left;
+    color: #000000;
 }
