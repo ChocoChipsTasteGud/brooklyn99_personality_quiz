@@ -16,3 +16,30 @@ slider.addEventListener('input', function() {
     calcValue();
     sliderValue.textContent = this.value;
 });
+
+const sliderQuestion = document.querySelector('.slider-qs');
+const nextButton = document.querySelector('.next');
+
+let qsCount = 8;
+sliderValue.textContent = slider.value;
+
+nextButton.addEventListener('click', () => {
+    qsCount = qsCount + 1;
+
+    if(qsCount === 9) {
+        sliderQuestion.textContent = "9) How grounded are you?";
+        slider.value = 1;
+        sliderValue.textContent = 1;
+        calcValue();
+    }
+
+    if (qsCount === 10) {
+        sliderQuestion.textContent = "10) How likely are you to undertake a bet?";
+        slider.value = 1;
+        sliderValue.textContent = 1;
+        calcValue();
+    }
+    if (qsCount === 11) {
+        window.location.href = "results.html";
+    }
+});

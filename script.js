@@ -25,7 +25,7 @@ nextButton.addEventListener('click', () => {
     }
 
     if (qsCount === 3) {
-        question.textContent = "3) Your friend just texted you an achievement. What's most likely to be your response?";
+        question.textContent = "3) Your friend just texted you an achievement. What's your response?";
         label[0].textContent = "omg that's CRAZY reminds me of the time.. blahblah";
         label[1].textContent = "👍";
         label[2].textContent = "LET'S GO CONGRATSS";
@@ -57,7 +57,7 @@ nextButton.addEventListener('click', () => {
     }
 
     if (qsCount === 7) {
-        question.textContent = "Why is work important to you?";
+        question.textContent = "8) Why is work important to you?";
         label[0].textContent = "to serve others";
         label[1].textContent = "it's fun";
         label[2].textContent = "money";
