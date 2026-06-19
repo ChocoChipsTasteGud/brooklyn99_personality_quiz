@@ -1,15 +1,17 @@
 let startClick = document.querySelector('.start-button');
-startClick.addEventListener('click', () => {
+if (startClick) {
+    startClick.addEventListener('click', () => {
     window.location.href = 'questions.html'
-})
+});
+}
 
 
 const question = document.querySelector(".question");
 const label = document.querySelectorAll("label");
 const nextButton = document.querySelector('.next');
-const radioButton = document.querySelectorAll('input[type=radio');
+const radioButton = document.querySelectorAll('input[type=radio]');
 
-let questionCount = 1;
+let qsCount = 1;
 
 nextButton.addEventListener('click', () => {
 
@@ -62,36 +64,14 @@ nextButton.addEventListener('click', () => {
         label[3].textContent = "work friends";
     }
 
-    if (qsCount === 8) {
-        question.textContent = "8) How social do you see yourself?";
-        label[0].textContent = "option1";
-        label[1].textContent = "option2";
-        label[2].textContent = "option3";
-        label[3].textContent = "option4";
-    }
-
-    if (qsCount === 9) {
-        question.textContent = "9) How grounded are you?";
-        label[0].textContent = "option1";
-        label[1].textContent = "option2";
-        label[2].textContent = "option3";
-        label[3].textContent = "option4";
-    }
-
-    if (qsCount === 10) {
-        question.textContent = "10) How likely are you to undertake a bet?";
-        label[0].textContent = "option1";
-        label[1].textContent = "option2";
-        label[2].textContent = "option3";
-        label[3].textContent = "option4";
-    }
-
-
     
-    if (qsCount === 11) {
-        window.location.href = "results";
+    if (qsCount === 8) {
+        window.location.href = "sliderquestion.html";
     }
 });
+
+
+
 
 
 
