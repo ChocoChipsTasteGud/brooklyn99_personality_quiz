@@ -169,10 +169,20 @@ input[type="radio"]:checked + label{
 
 .footer-container{
     display: flex;
-    justify-content: flex-end;
-    padding-top: 5px;
+    justify-content: space-between;
+    padding-bottom: 10px;
 }
 .next{
+    font-family: 'Silkscreen';
+    font-style: normal;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.back{
     font-family: 'Silkscreen';
     font-style: normal;
     font-size: 24px;

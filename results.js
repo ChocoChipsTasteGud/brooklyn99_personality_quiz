@@ -1,4 +1,4 @@
-console.log("--- RAW QUIZ ANSWERS ---");
+console.log("quiz answers");
 console.log("Q1:", localStorage.getItem('question_1'));
 console.log("Q2:", localStorage.getItem('question_2'));
 console.log("Q3:", localStorage.getItem('question_3'));
@@ -9,7 +9,6 @@ console.log("Q7:", localStorage.getItem('question_7'));
 console.log("Q8 (Slider):", localStorage.getItem('question_8'));
 console.log("Q9 (Slider):", localStorage.getItem('question_9'));
 console.log("Q10 (Slider):", localStorage.getItem('question_10'));
-console.log("------------------------");
 
 let scores = {
     jake: 0, amy: 0, holt: 0, rosa: 0, gina: 0, charles: 0, terry: 0

@@ -7,7 +7,7 @@ sliderValue.textContent = slider.value;
 function calcValue() {
     let maxVal = slider.max || 100;
     let sliderValuePercentage = (slider.value/maxVal) * 100;
-    slider.style.background = 'linear-gradient(to right, #a9a9a9 ${sliderValuePercentage}%, #ebe9e7 ${sliderValuePercentage}%)';
+    slider.style.background = `linear-gradient(to right, #a9a9a9 ${sliderValuePercentage}%, #ebe9e7 ${sliderValuePercentage}%)`;
 }
 
 calcValue()
@@ -19,6 +19,7 @@ slider.addEventListener('input', function() {
 
 const sliderQuestion = document.querySelector('.slider-qs');
 const nextButton = document.querySelector('.next');
+const backButton = document.querySelector('.back');
 
 let qsCount = 8;
 sliderValue.textContent = slider.value;
@@ -28,14 +29,14 @@ nextButton.addEventListener('click', () => {
     qsCount = qsCount + 1;
 
     if(qsCount === 9) {
-        sliderQuestion.textContent = "9) How assertive are you?";
+        sliderQuestion.textContent = "How assertive are you?";
         slider.value = 3;
         sliderValue.textContent = 3;
         calcValue();
     }
 
     if (qsCount === 10) {
-        sliderQuestion.textContent = "10) How likely are you to undertake a bet?";
+        sliderQuestion.textContent = "How likely are you to undertake a bet?";
         slider.value = 3;
         sliderValue.textContent = 3;
         calcValue();
@@ -44,3 +45,37 @@ nextButton.addEventListener('click', () => {
         window.location.href = "results.html";
     }
 });
+
+backButton.addEventListener('click', () => {
+    qsCount = qsCount - 1;
+    if(qsCount === 7){
+        localStorage.setItem('loadQuestion7', 'true');
+        window.location.href = 'questions.html';
+        return;
+    }
+
+    if(qsCount === 8){
+        sliderQuestion.textContent = "How big is your circle?";
+        slider.value = 3;
+        sliderValue.textContent = 3;
+        calcValue();
+    }
+
+
+
+    if(qsCount === 9){
+        sliderQuestion.textContent = "How assertive are you?";
+        slider.value = 3;
+        sliderValue.textContent = 3;
+        calcValue();
+
+    }
+
+    if(qsCount === 10){
+        sliderQuestion.textContent = "How likely are you to undertake a bet?";
+        slider.value = 3;
+        sliderValue.textContent = 3;
+        calcValue();
+
+    }
+})
