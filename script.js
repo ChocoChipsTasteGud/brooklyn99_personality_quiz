@@ -14,6 +14,14 @@ const radioButton = document.querySelectorAll('input[type=radio]');
 let qsCount = 1;
 
 nextButton.addEventListener('click', () => {
+    const checkedRadio = document.querySelector('input[type="radio"]:checked');
+    if (checkedRadio === null) {
+        alert("Please select an answer before moving on!");
+        return;
+    }
+    let selectedAnswer = Number(checkedRadio.value);
+    checkedRadio.checked = false;
+    localStorage.setItem(`question_${qsCount}`, selectedAnswer);
 
     qsCount = qsCount + 1;
     if (qsCount === 2) {
@@ -57,7 +65,7 @@ nextButton.addEventListener('click', () => {
     }
 
     if (qsCount === 7) {
-        question.textContent = "8) Why is work important to you?";
+        question.textContent = "7) Why is work important to you?";
         label[0].textContent = "to serve others";
         label[1].textContent = "it's fun";
         label[2].textContent = "money";
