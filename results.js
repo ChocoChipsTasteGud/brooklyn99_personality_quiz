@@ -115,42 +115,77 @@ const resultImage = document.querySelector('.result-image');
 
 if (winner === 'jake'){
     character.textContent = 'Jake Peralta';
-    description.textContent = '..';
-    resultImage.src = '';
+    description.textContent = "Jake Peralta! You're the life and soul of the party. Your charisma and creativity are what makes you special and helps you solve problems.";
+    resultImage.src = 'images-b99/jake-results.jpg';
 }
 
 if (winner === 'amy'){
     character.textContent = 'Amy Santiago';
-    description.textContent = '';
-    resultImage.src = '';
+    description.textContent = "Amy Santiago! As the workaholic of the group, being organized is your jam! Despite your love for climbing up the ladder, you're willing to give it up for your loved ones.";
+    resultImage.src = 'images-b99/amy-results.png';
 }
 
 if (winner === 'holt'){
     character.textContent = 'Captain Raymond Holt';
-    description.textContent = '';
-    resultImage.src = '';
+    description.textContent = "Captain Holt! You may be strict but it's always for the betterment of others and everybody appreciates your leadership. Your love for classics is unmatched.";
+    resultImage.src = 'images-b99/holt-results.jpg';
 }
 
 if(winner === 'rosa'){
     character.textContent = 'Rosa Diaz';
-    description.textContent = '';
-    resultImage.src = '';
+    description.textContent = "🎶Rosa Rosa🎶 Mysterious and bold but everybody knows you have a soft spot. You always know what you're doing. Wish I could glaze more but you're too secretive.";
+    resultImage.src = 'images-b99/rosa-results.jpg';
 }
 
 if(winner === 'charles'){
     character.textContent = 'Charles Boyle';
-    description.textContent = '';
-    resultImage.src = '';
+    description.textContent = "Charles Boyle! Like the foodie you are, your highly dedicated to food but also your friends - everybody needs a loyal and caring friend like you.";
+    resultImage.src = 'images-b99/charles-results.jpg';
 }
 
 if(winner === 'terry'){
     character.textContent = 'Terry Jeffords';
-    description.textContent = '';
-    resultImage.src = '';
+    description.textContent = "Terry Jeffords! Your the father/mother of the group, holding it together with your empathy and integrity. You always do what's right even if your yoghurt is at risk!";
+    resultImage.src = 'images-b99/terry-results.jpg';
 }
 
 if(winner === 'gina'){
     character.textContent = 'Gina Linetti';
-    description.textContent = '';
-    resultImage.src = '';
+    description.textContent = "Gina Linetti! The living embodiement of the 💯 emoji, you know how to get your way around anything. All hail the resident Queen!.";
+    resultImage.src = 'images-b99/gina-results.jpg';
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+
+    console.log("results page loaded");
+    const count = 200, defaults = {origin: {y: .7} };
+    function fire(particleRatio, opts) {
+        confetti(Object.assign({}, defaults, opts, {particleCount: Math.floor(count * particleRatio)}));
+    }
+    
+
+    fire(.25, {
+        spread: 26,
+        startVelocity: 55
+    });
+
+    fire(.2, { spread: 60});
+    fire(.35, {
+        spread: 100,
+        decay: .91,
+        scalar: .8
+    });
+
+    fire(.1, {
+        spread: 120,
+        startVelocity: 25,
+        decay: .92,
+        scalar: 1.2
+    });
+
+    fire(.1, {
+        spread: 120,
+        startVelocity: 45
+    });
+
+});

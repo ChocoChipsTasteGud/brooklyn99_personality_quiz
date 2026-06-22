@@ -20,8 +20,10 @@ slider.addEventListener('input', function() {
 const sliderQuestion = document.querySelector('.slider-qs');
 const nextButton = document.querySelector('.next');
 const backButton = document.querySelector('.back');
+const tracker = document.querySelector('.tracker');
 
 let qsCount = 8;
+tracker.textContent = `${qsCount}/10`;
 sliderValue.textContent = slider.value;
 
 nextButton.addEventListener('click', () => {
@@ -33,6 +35,7 @@ nextButton.addEventListener('click', () => {
         slider.value = 3;
         sliderValue.textContent = 3;
         calcValue();
+        tracker.textContent = `${qsCount}/10`;
     }
 
     if (qsCount === 10) {
@@ -40,6 +43,7 @@ nextButton.addEventListener('click', () => {
         slider.value = 3;
         sliderValue.textContent = 3;
         calcValue();
+        tracker.textContent = `${qsCount}/10`;
     }
     if (qsCount === 11) {
         window.location.href = "results.html";
@@ -52,6 +56,7 @@ backButton.addEventListener('click', () => {
         localStorage.setItem('loadQuestion7', 'true');
         window.location.href = 'questions.html';
         return;
+        tracker.textContent = `${qsCount}/10`;
     }
 
     if(qsCount === 8){
@@ -59,6 +64,7 @@ backButton.addEventListener('click', () => {
         slider.value = 3;
         sliderValue.textContent = 3;
         calcValue();
+        tracker.textContent = `${qsCount}/10`;
     }
 
 
@@ -68,6 +74,7 @@ backButton.addEventListener('click', () => {
         slider.value = 3;
         sliderValue.textContent = 3;
         calcValue();
+        tracker.textContent = `${qsCount}/10`;
 
     }
 
@@ -76,6 +83,7 @@ backButton.addEventListener('click', () => {
         slider.value = 3;
         sliderValue.textContent = 3;
         calcValue();
+        tracker.textContent = `${qsCount}/10`;
 
     }
 })
