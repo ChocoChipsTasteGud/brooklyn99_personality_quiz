@@ -1,3 +1,30 @@
+var iconContainer = document.querySelector('.mode-icon');
+var themeImage = document.getElementById('theme-image');
+var savedTheme = localStorage.getItem('theme');
+
+if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    if(themeImage) themeImage.src = 'images-b99/moon.png';
+
+}else{
+    document.body.classList.remove('light-theme');
+    if(themeImage) themeImage.src = 'images-b99/sun.png';
+}
+
+if(iconContainer && themeImage) {
+    iconContainer.onclick = function(){
+        document.body.classList.toggle('light-theme');
+        if(document.body.classList.contains('light-theme')){
+            themeImage.src = 'images-b99/moon.png';
+            localStorage.setItem('theme', 'light');
+        }else{
+            themeImage.src = 'images-b99/sun.png';
+            localStorage.setItem('theme', 'dark');
+        }
+    };
+}
+
+
 console.log("quiz answers");
 console.log("Q1:", localStorage.getItem('question_1'));
 console.log("Q2:", localStorage.getItem('question_2'));
@@ -189,3 +216,21 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+function autoClick(){
+    $("#download").click();
+}
+$(document).ready(function(){
+    var element = $(".results-box")[0];
+
+    $(".download").on('click', function(){
+        html2canvas(element, { scale: 2 }).then(function(canvas) {
+            
+                var imageData = canvas.toDataURL("image/jpeg");
+                var link = document.createElement('a');
+                link.download = 'brooklyn99-quiz-result.jpg';
+                link.href = imageData;
+                link.click();
+        })
+    })
+})

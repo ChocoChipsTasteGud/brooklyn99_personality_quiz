@@ -1,3 +1,31 @@
+
+var iconContainer = document.querySelector('.mode-icon');
+var themeImage = document.getElementById('theme-image');
+var savedTheme = localStorage.getItem('theme');
+
+
+
+if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    if(themeImage) themeImage.src = 'images-b99/moon.png';
+}else {
+    document.body.classList.remove('light-theme');
+    if(themeImage) themeImage.src = 'images-b99/sun.png';
+}
+if(iconContainer && themeImage) {
+    iconContainer.onclick = function(){
+        document.body.classList.toggle('light-theme');
+
+        if (document.body.classList.contains('light-theme')) {
+            themeImage.src = "images-b99/moon.png";
+            localStorage.setItem('theme', 'light');
+        }else {
+            themeImage.src = "images-b99/sun.png";
+            localStorage.setItem('theme' , 'dark');
+        }
+    };
+}
+
 let startClick = document.querySelector('.start-button');
 if (startClick) {
     startClick.addEventListener('click', () => {
@@ -179,6 +207,11 @@ backButton.addEventListener('click', () => {
 
 
 });
+
+
+
+
+
 
 
 
